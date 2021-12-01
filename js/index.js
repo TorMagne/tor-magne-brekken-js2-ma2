@@ -27,12 +27,14 @@ addNewButton, addEventListener('click', addItem);
 const deleteBtn = document.querySelectorAll('.btn-clear');
 
 const clearItem = (event) => {
-  const id = event.target.dataset.id;
-  if (id === listItems.id) {
-    console.log('hello');
-  }
-  // console.log(id);
-  console.log(listItems.id);
+  listItems.forEach((item) => {
+    const buttonId = event.target.dataset.id;
+    if (buttonId == item.id) {
+      console.log('hello');
+    }
+    // console.log(id);
+    console.log(item.id);
+  });
 };
 
 deleteBtn.forEach((btn) => {
