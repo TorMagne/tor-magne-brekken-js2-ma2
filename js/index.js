@@ -28,7 +28,7 @@ const deleteBtn = document.querySelectorAll('.btn-clear');
 
 const clearItem = (event) => {
   const id = event.target.dataset.id;
-  if (id === listItems) {
+  if (id === listItems.id) {
     console.log('hello');
   }
   // console.log(id);
