@@ -1,15 +1,22 @@
-import { createList } from './createList.js';
+// import { createList } from './createList.js';
+// import { saveToStorage, getFromStorage } from '../utils/storage.js';
 
-export const deleteButton = () => {
-  const deleteBtn = document.querySelectorAll('.btn-clear');
+// const listItems = getFromStorage(listKey);
 
-  const clearList = () => {
-    localStorage.removeItem('list');
-    console.log(btn);
-    // createList([]);
-  };
+// export const deleteButton = () => {
+//   const deleteBtn = document.querySelectorAll('.btn-clear');
 
-  deleteBtn.forEach((btn) => {
-    btn.addEventListener('click', clearList);
-  });
-};
+//   const clearItem = (event) => {
+//     const id = event.target.dataset.id;
+//     localStorage.removeItem('list', id);
+//     console.log(event.target.dataset.id);
+
+//     // createList([]);
+//   };
+
+//   deleteBtn.forEach((btn) => {
+//     btn.addEventListener('click', clearItem);
+//     console.log(btn);
+//   });
+// };
+// //

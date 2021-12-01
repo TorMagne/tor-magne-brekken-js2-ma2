@@ -17,7 +17,7 @@ export const createList = (listItems) => {
                                 <span class="${checked}">${listItem.item}</span>
                                 <div>
                                 <input ${checked} type="checkbox" data-id="${listItem.id}"/>
-                                <button class="btn-clear">Delete</button>
+                                <button class="btn-clear" data-id="${listItem.id}">Delete</button>
                                 </div>
                                 </li>`;
   });

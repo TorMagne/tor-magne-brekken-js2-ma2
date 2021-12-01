@@ -1,12 +1,11 @@
 import { createList } from './components/createList.js';
 import { saveToStorage, getFromStorage } from './utils/storage.js';
 import { listKey } from './settings.js';
-import { deleteButton } from './components/deleteButton.js';
+// import { deleteButton } from './components/deleteButton.js';
 
 const listItems = getFromStorage(listKey);
 
 createList(listItems);
-deleteButton();
 
 const listInput = document.querySelector('.todo-input');
 const addNewButton = document.querySelector('.add-btn');
@@ -22,8 +21,22 @@ const addItem = () => {
     createList(listItems);
     saveToStorage(listKey, listItems);
   }
-
-  //   console.log(listItems);
 };
 
 addNewButton, addEventListener('click', addItem);
+
+const deleteBtn = document.querySelectorAll('.btn-clear');
+
+const clearItem = (e) => {
+  const buttonId = e.target.dataset.id;
+  if (buttonId === listItems.id) {
+    console.log('hello');
+  }
+  // console.log(id);
+  console.log(listItems.id);
+};
+
+deleteBtn.forEach((btn) => {
+  btn.addEventListener('click', clearItem);
+  console.log(btn);
+});
