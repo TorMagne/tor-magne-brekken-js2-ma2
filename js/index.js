@@ -26,9 +26,9 @@ addNewButton, addEventListener('click', addItem);
 
 const deleteBtn = document.querySelectorAll('.btn-clear');
 
-const clearItem = (e) => {
-  const buttonId = e.target.dataset.id;
-  if (buttonId === listItems.id) {
+const clearItem = (event) => {
+  const id = event.target.dataset.id;
+  if (id === listItems) {
     console.log('hello');
   }
   // console.log(id);
