@@ -1,7 +1,6 @@
 import { createList } from './components/createList.js';
 import { saveToStorage, getFromStorage } from './utils/storage.js';
 import { listKey } from './settings.js';
-// import { deleteButton } from './components/deleteButton.js';
 
 const listItems = getFromStorage(listKey);
 
