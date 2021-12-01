@@ -2,7 +2,7 @@ import { createList } from './components/createList.js';
 import { saveToStorage, getFromStorage } from './utils/storage.js';
 import { listKey } from './settings.js';
 
-const listItems = getFromStorage(listKey);
+let listItems = getFromStorage(listKey);
 
 createList(listItems);
 
@@ -26,20 +26,21 @@ addNewButton, addEventListener('click', addItem);
 
 const deleteBtn = document.querySelectorAll('.btn-clear');
 
-const clearItem = (event) => {
-  listItems.forEach((item) => {
-    const buttonId = event.target.dataset.id;
-    if (buttonId == item.id) {
-      console.log(item.id);
-      listItems.remove();
-      // localStorage.removeItem('list');
+const removeFromList = (event) => {
+  // console.log(event);
+  const deleteItem = event.target.dataset.id;
+
+  const newList = listItems.filter(function (item) {
+    if (deleteItem !== item) {
+      return true;
     }
-    // console.log(id);
-    // console.log(item.id);
   });
+
+  // listItems = newList;
+  // createList(listItems);
+  console.log(newList);
 };
 
 deleteBtn.forEach((btn) => {
-  btn.addEventListener('click', clearItem);
-  console.log(btn);
+  btn.addEventListener('click', removeFromList);
 });
