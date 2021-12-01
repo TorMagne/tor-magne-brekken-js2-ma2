@@ -30,10 +30,12 @@ const clearItem = (event) => {
   listItems.forEach((item) => {
     const buttonId = event.target.dataset.id;
     if (buttonId == item.id) {
-      console.log('hello');
+      console.log(item.id);
+      listItems.remove();
+      // localStorage.removeItem('list');
     }
     // console.log(id);
-    console.log(item.id);
+    // console.log(item.id);
   });
 };
 
