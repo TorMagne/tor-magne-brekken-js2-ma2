@@ -46,7 +46,5 @@ const updateList = (listItems, id, checked) => {
 
   listItems[itemIndex].complete = checked;
 
-  console.log(listItems);
-
   return listItems;
 };
