@@ -24,23 +24,50 @@ const addItem = () => {
 
 addNewButton, addEventListener('click', addItem);
 
-const deleteBtn = document.querySelectorAll('.btn-clear');
-
 const removeFromList = (event) => {
-  // console.log(event);
   const deleteItem = event.target.dataset.id;
+  console.log(deleteItem);
 
   const newList = listItems.filter(function (item) {
-    if (deleteItem !== item) {
+    if (deleteItem != parseInt(item.id)) {
       return true;
     }
   });
 
-  // listItems = newList;
-  // createList(listItems);
-  console.log(newList);
+  listItems = newList;
+
+  createList(listItems);
+  saveToStorage(listKey, listItems);
+  setDeleteListener();
 };
 
-deleteBtn.forEach((btn) => {
-  btn.addEventListener('click', removeFromList);
-});
+function setDeleteListener() {
+  const deleteBtn = document.querySelectorAll('.btn-clear');
+
+  deleteBtn.forEach((btn) => {
+    btn.addEventListener('click', removeFromList);
+  });
+}
+
+setDeleteListener();
+
+// const deleteBtn = document.querySelectorAll('.btn-clear');
+
+// const removeFromList = (event) => {
+//   // console.log(event);
+//   const deleteItem = event.target.dataset.id;
+
+//   const newList = listItems.filter(function (item) {
+//     if (deleteItem !== item) {
+//       return true;
+//     }
+//   });
+
+//   // listItems = newList;
+//   // createList(listItems);
+//   console.log(newList);
+// };
+
+// deleteBtn.forEach((btn) => {
+//   btn.addEventListener('click', removeFromList);
+// });
