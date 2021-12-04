@@ -6,7 +6,7 @@ export const createList = (listItems) => {
 
   itemContainer.innerHTML = '';
 
-  if (listItems.length === 0) {
+  if (!listItems.length) {
     itemContainer.innerHTML += 'There is no items in the list';
   }
 
