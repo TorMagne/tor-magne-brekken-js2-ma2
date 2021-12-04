@@ -6,6 +6,10 @@ export const createList = (listItems) => {
 
   itemContainer.innerHTML = '';
 
+  if (listItems.length === 0) {
+    itemContainer.innerHTML += 'There is no items in the list';
+  }
+
   listItems.forEach((listItem) => {
     let checked = '';
 
